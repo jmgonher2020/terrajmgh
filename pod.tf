@@ -1,10 +1,23 @@
-resource "kubernetes_pod" "echo" {
+resource "kubernetes_deployment" "echo" {
   metadata {
-    name = "echo-example"
+    name = "scalable-echo-example"
     labels = {
-      App = "echo"
+      App = "ScalableEchoExample"
+    }
   }
-}
+  spec {
+    replicas = 2
+    selector {
+      match_labels = {
+        App = "ScalableEchoExample"
+      }
+    }
+    template {
+      metadata {
+        labels = {
+          App = "ScalableEchoExample"
+        }
+      }
   spec {
     container {
       image = "hashicorp/http-echo:0.2.1"
@@ -15,9 +28,8 @@ resource "kubernetes_pod" "echo" {
 }
 }
 }
-depends_on = [
-   local_file.kubeconfig,
-  ]
+}
+}
 }
 resource "kubernetes_service" "echo" {
   metadata {
@@ -25,7 +37,7 @@ resource "kubernetes_service" "echo" {
   }
   spec {
     selector = {
-      App = "${kubernetes_pod.echo.metadata.0.labels.App}"
+      App = kubernetes_deployment.echo.spec.0.template.0.metadata[0].labels.App
     }
     port {
       port        = 80
