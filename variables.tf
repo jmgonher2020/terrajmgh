@@ -12,7 +12,7 @@ variable "ssh_public_key_file" {
 }
 
 variable "region" {
-  default = "eu-frankfurt-1"
+  default = "us-ashburn-1"
 }
 
 # Choose an Availability Domain
