@@ -27,7 +27,11 @@ resource "oci_containerengine_node_pool" "k8s_node_pool" {
       availability_domain = "US-ASHBURN-AD-1"
       subnet_id         = "${oci_core_subnet.workerSubnetAD1.id}"
       }
-      size = 6
+    placement_configs {
+      availability_domain = "US-ASHBURN-AD-2"
+      subnet_id         = "${oci_core_subnet.workerSubnetAD2.id}"
+      }
+      size = 2
     }
 #  ssh_public_key      = "${file(var.ssh_public_key_file)}"
 }
