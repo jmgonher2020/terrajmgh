@@ -24,7 +24,8 @@ resource "oci_containerengine_node_pool" "k8s_node_pool" {
 ##  quantity_per_subnet = "${var.oke["nodes_per_subnet"]}"
   node_config_details {
     placement_configs {
- subnet_id         = "${oci_core_subnet.workerSubnetAD1.id}"
+      availability_domain = local.ad1
+      subnet_id         = "${oci_core_subnet.workerSubnetAD1.id}"
       }
       size = 6
     }
