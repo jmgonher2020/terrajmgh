@@ -23,8 +23,10 @@ resource "oci_containerengine_node_pool" "k8s_node_pool" {
 
 ##  quantity_per_subnet = "${var.oke["nodes_per_subnet"]}"
   node_config_details {
+    placement_configs {
  subnet_id         = "${oci_core_subnet.workerSubnetAD1.id}", "${oci_core_subnet.workerSubnetAD2.id}", "${oci_core_subnet.workerSubnetAD3.id}"
-    size = 6
+      }
+      size = 6
     }
 #  ssh_public_key      = "${file(var.ssh_public_key_file)}"
 }
