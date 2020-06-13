@@ -6,7 +6,7 @@ resource "kubernetes_deployment" "echo" {
     }
   }
   spec {
-    replicas = 4
+    replicas = 3
     selector {
       match_labels = {
         App = "ScalableEchoExample"
