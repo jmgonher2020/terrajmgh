@@ -1,6 +1,7 @@
 resource "oci_containerengine_cluster" "k8s_cluster" {
   #Required
-  compartment_id     = "${var.compartment_ocid}"
+  #compartment_id     = "${var.compartment_ocid}" 
+  compartment_id     = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
   kubernetes_version = "${var.oke["version"]}"
   name               = "${var.oke["name"]}"
   vcn_id             = "${oci_core_vcn.oke_vcn.id}"
