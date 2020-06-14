@@ -1,7 +1,8 @@
 resource "oci_core_vcn" "oke_vcn" {
   #Required
   cidr_block     = "${lookup(var.network_cidrs, "vcnCIDR")}"
-  compartment_id = "${var.compartment_ocid}"
+  #compartment_id = "${var.compartment_ocid}"
+  compartment_id = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
 
   #Optional
   dns_label    = "vcn1"
@@ -10,7 +11,8 @@ resource "oci_core_vcn" "oke_vcn" {
 
 resource "oci_core_security_list" "oke_sl" {
   #Required
-  compartment_id = "${var.compartment_ocid}"
+  #compartment_id = "${var.compartment_ocid}"
+  compartment_id = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
   vcn_id         = "${oci_core_vcn.oke_vcn.id}"
 
   egress_security_rules {
@@ -31,7 +33,8 @@ resource "oci_core_security_list" "oke_sl" {
 
 resource "oci_core_internet_gateway" "oke_ig" {
   #Required
-  compartment_id = "${var.compartment_ocid}"
+  #compartment_id = "${var.compartment_ocid}"
+  compartment_id = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
   vcn_id         = "${oci_core_vcn.oke_vcn.id}"
 
   #Optional
@@ -41,7 +44,8 @@ resource "oci_core_internet_gateway" "oke_ig" {
 
 resource "oci_core_route_table" "oke_rt" {
   #Required
-  compartment_id = "${var.compartment_ocid}"
+  #compartment_id = "${var.compartment_ocid}"
+  compartment_id = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
   vcn_id         = "${oci_core_vcn.oke_vcn.id}"
 
   route_rules {
@@ -56,7 +60,8 @@ resource "oci_core_route_table" "oke_rt" {
 resource "oci_core_subnet" "workerSubnetAD1" {
   #Required
   cidr_block        = "${lookup(var.network_cidrs, "workerSubnetAD1")}"
-  compartment_id    = "${var.compartment_ocid}"
+  #compartment_id    = "${var.compartment_ocid}"
+  compartment_id = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
   security_list_ids = ["${oci_core_security_list.oke_sl.id}"]
   vcn_id            = "${oci_core_vcn.oke_vcn.id}"
 
@@ -71,7 +76,8 @@ resource "oci_core_subnet" "workerSubnetAD1" {
 resource "oci_core_subnet" "workerSubnetAD2" {
   #Required
   cidr_block        = "${lookup(var.network_cidrs, "workerSubnetAD2")}"
-  compartment_id    = "${var.compartment_ocid}"
+  #compartment_id    = "${var.compartment_ocid}"
+  compartment_id = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
   security_list_ids = ["${oci_core_security_list.oke_sl.id}"]
   vcn_id            = "${oci_core_vcn.oke_vcn.id}"
 
@@ -86,7 +92,8 @@ resource "oci_core_subnet" "workerSubnetAD2" {
 resource "oci_core_subnet" "workerSubnetAD3" {
   #Required
   cidr_block        = "${lookup(var.network_cidrs, "workerSubnetAD3")}"
-  compartment_id    = "${var.compartment_ocid}"
+  #compartment_id    = "${var.compartment_ocid}"
+  compartment_id = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
   security_list_ids = ["${oci_core_security_list.oke_sl.id}"]
   vcn_id            = "${oci_core_vcn.oke_vcn.id}"
 
@@ -101,7 +108,8 @@ resource "oci_core_subnet" "workerSubnetAD3" {
 resource "oci_core_subnet" "LoadBalancerSubnetAD1" {
   #Required
   cidr_block        = "${lookup(var.network_cidrs, "LoadBalancerSubnetAD1")}"
-  compartment_id    = "${var.compartment_ocid}"
+  #compartment_id = "${var.compartment_ocid}"
+  compartment_id    = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
   security_list_ids = ["${oci_core_security_list.oke_sl.id}"]
   vcn_id            = "${oci_core_vcn.oke_vcn.id}"
 
@@ -116,7 +124,7 @@ resource "oci_core_subnet" "LoadBalancerSubnetAD1" {
 resource "oci_core_subnet" "LoadBalancerSubnetAD2" {
   #Required
   cidr_block        = "${lookup(var.network_cidrs, "LoadBalancerSubnetAD2")}"
-  compartment_id    = "${var.compartment_ocid}"
+  compartment_id    = "ocid1.compartment.oc1..aaaaaaaauow2wnn5drbtbuaak7s2h54ok746k7r4waw3ujfgl4eh2sv73ipa"
   security_list_ids = ["${oci_core_security_list.oke_sl.id}"]
   vcn_id            = "${oci_core_vcn.oke_vcn.id}"
 
