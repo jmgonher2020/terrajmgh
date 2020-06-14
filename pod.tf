@@ -49,6 +49,6 @@ depends_on = [
    local_file.kubeconfig,
   ]
 }
-output "lb_ip" {
-  value = "${kubernetes_service.echo.load_balancer_ingress.0.ip}"
-}
+#output "lb_ip" {
+#  value = "${kubernetes_service.echo.load_balancer_ingress.0.ip}"
+#}
