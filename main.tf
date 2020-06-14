@@ -1,6 +1,6 @@
 module "pod" {
 #  source = "./modulos/"
-  source = "github.com/jmgonher2020/terrajmgh"
+#  source = "github.com/jmgonher2020/terrajmgh"
   tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaazcus7tl3fravsyw2p7w6dg5biixbwnpx3fg5cqikz3h2w6hwfiqq"
   private_key_path = "/home/ubuntu/.oci/oci_api_key.pem"
   private_key_password = "infranet2k55"
