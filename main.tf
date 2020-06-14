@@ -1,4 +1,5 @@
-module "pod" {
+#module "pod" {
+resource "pod" {  
 #  source = "./modulos/"
 #  source = "github.com/jmgonher2020/terrajmgh"
   tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaazcus7tl3fravsyw2p7w6dg5biixbwnpx3fg5cqikz3h2w6hwfiqq"
