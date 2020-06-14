@@ -10,7 +10,6 @@
 #  fingerprint = "ff:69:af:e8:8d:c6:83:ba:54:fb:67:2d:09:9b:00:41"
 #  region = "us-ashburn-1"
 #}
-output "lb_ip" {
-#  value = "${pod.kubernetes_service.echo.load_balancer_ingress.0.ip}"
-  value = "${module.pod.lb_ip}"
-}
+#output "lb_ip" {
+#  value = "${module.pod.lb_ip}"
+#}
