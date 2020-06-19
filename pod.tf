@@ -22,7 +22,7 @@ resource "kubernetes_deployment" "echo" {
     container {
       image = "hashicorp/http-echo:0.2.1"
       name  = "example2"
-      args = ["-listen=:80", "-text='Hola Mundo JMGH'"]
+      args = ["-listen=:80", "-text='Hola Mundo JMGH 2020'"]
       port {
         container_port = 80
 }
