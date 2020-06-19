@@ -50,7 +50,6 @@ data "oci_containerengine_cluster_kube_config" "cluster_kube_config" {
 resource "local_file" "kubeconfig" {
   content  = "${data.oci_containerengine_cluster_kube_config.cluster_kube_config.content}"
 ##  filename = "${path.module}/kubeconfig"
-##    filename = "/home/ubuntu/.kube/config"
   filename = "/var/lib/jenkins/.kube/config"
 ##  filename = "~/.kube/config"
 }
