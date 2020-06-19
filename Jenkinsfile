@@ -1,7 +1,7 @@
 pipeline {
  agent any
  stages {
- stage('Set Terraform path') {
+ stage('shell Terraform') {
  steps {
 sh "terraform init"
 sh "terraform plan"
