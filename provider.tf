@@ -9,7 +9,7 @@ provider "oci" {
   user_ocid        = "ocid1.user.oc1..aaaaaaaa5h4fyfbcmu3jcyd2is4734clobpkcrzfebjuw5f2hknftkav5lea"
   fingerprint      = "ff:69:af:e8:8d:c6:83:ba:54:fb:67:2d:09:9b:00:41"
   private_key_path = "/home/ubuntu/.oci/oci_api_key.pem"
-  private_key_password = "infranetsadssa"
+  private_key_password = "xxxxxxxxx"
   region           = "us-ashburn-1"
 
 }
