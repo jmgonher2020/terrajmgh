@@ -45,8 +45,5 @@ resource "kubernetes_service" "echo" {
     }
     type = "LoadBalancer"
 }
-depends_on = [
-   local_file.kubeconfig,
-  ]
 }
 
