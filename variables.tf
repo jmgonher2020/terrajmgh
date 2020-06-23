@@ -25,8 +25,7 @@ variable "internet_gateway_enabled" {
 }
 
 variable "worker_ol_image_name" {
-  default = "Oracle-Linux-7.8"
-  #default = "Oracle-Linux-7.5"
+  default = "Oracle-Linux-7.5"
 }
 
 variable "oke" {
