@@ -25,7 +25,7 @@ variable "internet_gateway_enabled" {
 }
 
 variable "worker_ol_image_name" {
-  default = "Oracle-Linux-7.7"
+  default = "Oracle-Linux-7.8-2020.06.09-0"
   #default = "Oracle-Linux-7.5"
 }
 
@@ -35,7 +35,7 @@ variable "oke" {
   default = {
     name             = "oke"
     #version          = "v1.15.7"
-    version          = "v1.16.8-2020.06.09-0"
+    version          = "v1.16.8"
     shape            = "VM.Standard2.1"
 #shape            = "VM.Standard.E2.2"
     nodes_per_subnet = 1
