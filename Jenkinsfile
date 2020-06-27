@@ -16,3 +16,4 @@ sh "terraform destroy -auto-approve"
 	            echo "$lb_ip"
 }    
 }
+}
