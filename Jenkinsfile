@@ -13,7 +13,7 @@ sh "terraform destroy -auto-approve"
 }
  post {
 	        success {
-	            echo "$lb_ip"
+	            echo "lb_ip"
 }    
 }
 }
