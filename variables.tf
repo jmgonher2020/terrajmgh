@@ -41,6 +41,10 @@ variable "oke" {
   }
 }
 
+variable "replicas" {
+  default= "4"
+  }
+
 variable "network_cidrs" {
   type = "map"
 
