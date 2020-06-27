@@ -36,7 +36,7 @@ resource "oci_containerengine_node_pool" "k8s_node_pool" {
       availability_domain = "uyHy:US-ASHBURN-AD-3"
       subnet_id         = "${oci_core_subnet.workerSubnetAD3.id}"
       }
-      size = 2
+      size = "${var.nodos}"
     }
 #  ssh_public_key      = "${file(var.ssh_public_key_file)}"
 }
