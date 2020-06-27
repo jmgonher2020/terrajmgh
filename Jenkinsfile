@@ -11,4 +11,8 @@ sh "terraform destroy -auto-approve"
 }
 }
 }
+ post {
+	        success {
+	            echo 'This will run only if successful'
+	    }
 }
