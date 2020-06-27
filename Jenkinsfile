@@ -13,6 +13,6 @@ sh "terraform destroy -auto-approve"
 }
  post {
 	        success {
-	            echo 'This will run only if successful'
+	            echo "${kubernetes_service.echo.load_balancer_ingress.0.ip}"
 	    }
 }
