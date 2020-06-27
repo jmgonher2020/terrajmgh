@@ -42,7 +42,13 @@ variable "oke" {
 }
 
 variable "replicas" {
-  default= "4"
+  default= "3"
+#   default= "4"
+  }
+
+variable "nodos" {
+  default= "3"
+#   default= "4"
   }
 
 variable "network_cidrs" {
