@@ -31,7 +31,7 @@ resource "kubernetes_deployment" "echo" {
 }
 }
   depends_on = [oci_containerengine_node_pool.k8s_node_pool]
-  #create_duration = "600s"
+  create_duration = "120s"
 }
 
 resource "kubernetes_service" "echo" {
@@ -49,6 +49,6 @@ resource "kubernetes_service" "echo" {
     type = "LoadBalancer"
 }
   depends_on = [kubernetes_deployment.echo]
-  #create_duration = "600s"
+  create_duration = "120s"
 }
 
