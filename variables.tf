@@ -47,7 +47,7 @@ variable "replicas" {
   }
 
 variable "nodos" {
-  default= "3"
+  default= "2"
 #   default= "4"
   }
 
