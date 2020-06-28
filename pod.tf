@@ -30,7 +30,9 @@ resource "kubernetes_deployment" "echo" {
 }
 }
 }
+  depends_on = [oci_containerengine_node_pool.k8s_node_pool]
 }
+
 resource "kubernetes_service" "echo" {
   metadata {
     name = "echo-example"
@@ -45,5 +47,6 @@ resource "kubernetes_service" "echo" {
     }
     type = "LoadBalancer"
 }
+  depends_on = [oci_containerengine_node_pool.k8s_node_pool]
 }
 
