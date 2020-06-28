@@ -7,7 +7,7 @@ sh "terraform init"
 sh "terraform plan"
 sh "terraform get -update"
 sh "terraform apply -auto-approve"
-sh "terraform output lb_ip"
+sh "terraform output"
 //sh "terraform destroy -auto-approve"
 }
 }
