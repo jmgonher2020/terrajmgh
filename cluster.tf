@@ -52,7 +52,7 @@ resource "local_file" "kubeconfig" {
 ##  filename = "${path.module}/kubeconfig"
   filename = "/var/lib/jenkins/.kube/config"
 ##  filename = "~/.kube/config"
-  provisioner "local-exec" {
-    command = "sleep 60"
-  }
+##  provisioner "local-exec" {
+##    command = "sleep 60"
+##  }
 }
