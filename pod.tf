@@ -54,4 +54,3 @@ resource "kubernetes_service" "echo" {
 }
   depends_on = [local_file.kubeconfig,time_sleep.wait_120_seconds]
 }
-,
