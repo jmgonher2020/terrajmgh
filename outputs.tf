@@ -10,3 +10,6 @@ output "nodos" {
 #output "K8s Version" {
 #  value = "${oci_containerengine_cluster.k8s_cluster.kubernetes_version}"
 #}
+output "K8s Version" {
+  value = "${oci_containerengine_cluster.k8s_cluster.spec.0.kubernetes_version}"
+}
