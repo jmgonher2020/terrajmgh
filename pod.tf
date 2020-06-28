@@ -35,6 +35,9 @@ resource "kubernetes_deployment" "echo" {
 }
 }
 }
+    provisioner "local-exec" {
+    command = "sleep 120"
+  }
   depends_on = [local_file.kubeconfig,time_sleep.wait_120_seconds]
 }
 
@@ -52,5 +55,8 @@ resource "kubernetes_service" "echo" {
     }
     type = "LoadBalancer"
 }
+    provisioner "local-exec" {
+    command = "sleep 120"
+  }
   depends_on = [local_file.kubeconfig,time_sleep.wait_120_seconds]
 }
