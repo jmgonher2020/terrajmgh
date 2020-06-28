@@ -5,8 +5,8 @@ output "replicas" {
   value = "${kubernetes_deployment.echo.spec.0.replicas}"
 }
 output "nodos" {
-  value = "${oci_containerengine_node_pool.k8s_node_pool.node_config_details.size}"
+  value = "${oci_containerengine_node_pool.k8s_node_pool.node_config_details.0.size}"
 }
 output "K8s_Version" {
-  value = "${oci_containerengine_cluster.k8s_cluster.0.kubernetes_version}"
+  value = "${oci_containerengine_cluster.k8s_cluster.kubernetes_version}"
 }
