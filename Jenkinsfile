@@ -3,8 +3,7 @@ pipeline {
  stages {
  stage('shell Terraform') {
  steps {
-//sh "/var/lib/jenkins/terra-script.sh"
-sh "terraform-script.sh"
+sh "/var/lib/jenkins/terra-script.sh"
 //sh "terraform init"
 //sh "terraform plan"
 //sh "terraform get -update"
