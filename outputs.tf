@@ -10,3 +10,6 @@ output "nodos" {
 output "K8s_Version" {
   value = "${oci_containerengine_cluster.k8s_cluster.kubernetes_version}"
 }
+output "Nodo_shape" {
+  value = "${oci_containerengine_node_pool.k8s_node_pool.node_shape}"
+}
