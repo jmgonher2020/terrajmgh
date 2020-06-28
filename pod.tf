@@ -1,8 +1,8 @@
-resource "null_resource" "previous" {}
-resource "time_sleep" "wait_120_seconds" {
-  depends_on = [null_resource.previous]
-  create_duration = "180s"
-}
+##resource "null_resource" "previous" {}
+##resource "time_sleep" "wait_120_seconds" {
+##  depends_on = [null_resource.previous]
+##  create_duration = "180s"
+##}
 resource "kubernetes_deployment" "echo" {
   metadata {
     name = "scalable-echo-example"
@@ -35,10 +35,10 @@ resource "kubernetes_deployment" "echo" {
 }
 }
 }
-    provisioner "local-exec" {
-    command = "sleep 60"
-  }
-  depends_on = [local_file.kubeconfig,time_sleep.wait_120_seconds]
+##    provisioner "local-exec" {
+##    command = "sleep 60"
+##  }
+##  depends_on = [local_file.kubeconfig,time_sleep.wait_120_seconds]
 }
 
 resource "kubernetes_service" "echo" {
@@ -55,8 +55,8 @@ resource "kubernetes_service" "echo" {
     }
     type = "LoadBalancer"
 }
-    provisioner "local-exec" {
-    command = "sleep 60"
-  }
-  depends_on = [local_file.kubeconfig,time_sleep.wait_120_seconds]
+##    provisioner "local-exec" {
+##    command = "sleep 60"
+##  }
+##  depends_on = [local_file.kubeconfig,time_sleep.wait_120_seconds]
 }
