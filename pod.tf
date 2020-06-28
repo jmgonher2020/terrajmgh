@@ -52,6 +52,6 @@ resource "kubernetes_service" "echo" {
     }
     type = "LoadBalancer"
 }
-  depends_on = [local_file.kubeconfigtime_sleep.wait_120_seconds]
+  depends_on = [local_file.kubeconfig,time_sleep.wait_120_seconds]
 }
 ,
