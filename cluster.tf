@@ -53,7 +53,6 @@ resource "local_file" "kubeconfig" {
   filename = "/var/lib/jenkins/.kube/config"
 ##  filename = "~/.kube/config"
   provisioner "local-exec" {
-    command = "sleep 120"
+    command = "sleep 60"
   }
-  depends_on = [time_sleep.wait_120_seconds]
 }
